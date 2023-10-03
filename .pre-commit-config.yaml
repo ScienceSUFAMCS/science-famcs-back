@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.0.1
+    rev: v3.4.0
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
@@ -8,10 +8,11 @@ repos:
       - id: debug-statements
 
   - repo: https://github.com/pycqa/flake8
-    rev: 3.9.2
+    rev: 6.1.0
     hooks:
       - id: flake8
         additional_dependencies: ["flake8-bandit", "flake8-bugbear"]
+        args: ['--config=setup.cfg']
 
   - repo: https://github.com/pycqa/isort
     rev: 5.12.0
@@ -20,7 +21,7 @@ repos:
         args: ["--profile", "black", "--filter-files"]
 
   - repo: https://github.com/psf/black
-    rev: 21.7b0
+    rev: 23.9.1
     hooks:
       - id: black
         language_version: python3
