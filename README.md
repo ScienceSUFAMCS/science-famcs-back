@@ -19,4 +19,16 @@ pre-commit install
 After that operations try to commit something.
 Environment will install by itself.
 
-##### You successfully installed linters in pre-commit hooks :)
+## Tests usage
+
+#### Test invocation:
+
+To invoke all project pytest tests:
+```sh
+pip pytest .
+```
+
+To invoke all pytest tests from specific folder:
+```sh
+pip pytest local/path/to/folder/
+```
