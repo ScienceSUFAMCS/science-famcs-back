@@ -25,10 +25,10 @@ Environment will install by itself.
 
 To invoke all project pytest tests:
 ```sh
-pip pytest .
+pytest .
 ```
 
 To invoke all pytest tests from specific folder:
 ```sh
-pip pytest local/path/to/folder/
+pytest local/path/to/folder/
 ```
