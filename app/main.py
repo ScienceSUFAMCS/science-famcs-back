@@ -2,10 +2,6 @@ from fastapi import FastAPI, Request
 from fastapi.responses import RedirectResponse, JSONResponse
 from starlette import status
 import uvicorn
-from .db.database import Base, engine
-
-
-Base.metadata.create_all(bind=engine)
 
 
 app = FastAPI()
