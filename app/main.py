@@ -9,7 +9,7 @@ app = FastAPI()
 
 @app.get("/")
 def root(request: Request):
-    return RedirectResponse(request.url._url + "health")
+    return RedirectResponse(request.url.url + "health")
 
 
 @app.get("/health")
