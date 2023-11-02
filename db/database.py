@@ -6,7 +6,7 @@ from sqlalchemy.orm import declarative_base
 
 load_dotenv()
 
-engine = create_async_engine(os.getenv("POSTGRES_DATABASE_URL"))
+engine = create_async_engine(os.getenv("POSTGRES_DATABASE_URL"), echo=True)
 session_factory = async_sessionmaker(bind=engine)
 
 Base = declarative_base()
