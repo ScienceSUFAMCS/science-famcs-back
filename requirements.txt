@@ -15,6 +15,7 @@ fastapi==0.103.2
 fastapi-jwt-auth==0.5.0
 filelock==3.12.4
 flake8==6.1.0
+GeoAlchemy2==0.14.2
 greenlet==3.0.1
 h11==0.14.0
 identify==2.5.30
