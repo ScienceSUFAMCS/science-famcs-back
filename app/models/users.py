@@ -7,7 +7,7 @@ from sqlalchemy.orm import relationship
 from db.database import Base
 
 
-class Faculties(enum.Enum):
+class Faculties(str, enum.Enum):
     bio = "Биологический факультет"
     war = "Военный факультет"
     geo = "Факультет географии и геоинформатики"
@@ -41,13 +41,13 @@ class User(Base):
     surname = sa.Column(sa.String, nullable=False)
     patronymic = sa.Column(sa.String)
     photo = sa.Column(sa.String)
-    faculty = sa.Column(sa.Enum(Faculties))
+    faculty = sa.Column(sa.Enum(Faculties), default=Faculties.famcs)
     course = sa.Column(sa.Integer)
-    group = sa.Column(sa.Integer)
+    group = sa.Column(sa.String)
     email = sa.Column(sa.String)
     telegram = sa.Column(sa.String)
     login = sa.Column(sa.String, nullable=False, unique=True)
     password = sa.Column(sa.String, nullable=False)
     is_active = sa.Column(sa.Boolean, default=True)
-    role = relationship("Role", back_populates="users")
+    role = relationship("Role", back_populates="users", lazy="selectin")
     role_id = sa.Column(sa.Integer, ForeignKey("roles.id"))
